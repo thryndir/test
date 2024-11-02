@@ -6,7 +6,7 @@
 /*   By: lgalloux <lgalloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:59:46 by lgalloux          #+#    #+#             */
-/*   Updated: 2024/05/27 21:50:15 by lgalloux         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:46:14 by lgalloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,7 +264,7 @@ size_t			ft_strlen(const char *str);
  * @param str the string where we are searching
  * @param word the word we are searching in the string
  * @param len the len of the word
- * @return int return 1 if the word is in str, 0 in the other case
+ * @return int return 1 if the word is in str, 0 otherwise
  */
 int				ft_is_word_in(const char *str, const char *word, int len);
 

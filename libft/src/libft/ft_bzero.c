@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgalloux <lgalloux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thryndir <thryndir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:53:23 by lgalloux          #+#    #+#             */
-/*   Updated: 2024/05/29 23:30:22 by lgalloux         ###   ########.fr       */
+/*   Updated: 2024/10/22 12:51:12 by thryndir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *s, size_t n)
 {
 	if (s == NULL)
-		return;
+		return ;
 	while (n)
 	{
 		*(char *)s = '\0';

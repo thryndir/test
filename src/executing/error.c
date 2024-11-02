@@ -1,17 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lgalloux <lgalloux@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 00:33:39 by lgalloux          #+#    #+#             */
-/*   Updated: 2024/05/27 22:01:59 by lgalloux         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "pipex.h"
-#include "libft.h"
+#include "executing.h"
 
 void	ft_error(char *message, t_pipex *pipex, int which, int status)
 {

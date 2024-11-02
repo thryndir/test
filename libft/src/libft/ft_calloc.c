@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgalloux <lgalloux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thryndir <thryndir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:16:45 by lgalloux          #+#    #+#             */
-/*   Updated: 2023/10/31 13:02:21 by lgalloux         ###   ########.fr       */
+/*   Updated: 2024/10/18 15:02:01 by thryndir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t elementCount, size_t elementSize)
 	unsigned char	*memory;
 	size_t			i;
 
+	if (!elementCount || !elementSize)
+		return (NULL);
 	memory = malloc(elementCount * elementSize);
 	if (memory == NULL)
 		return (NULL);

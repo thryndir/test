@@ -1,37 +1,41 @@
-NAME	= pipex
-CC 	= cc
-CFLAGS	= -Wextra -Wall -Werror -g
-HEADER = -Ilib/Libft/include -Iinclude
-LIB	= lib/Libft/libft.a
 
-FILES = main init init_exec exec utils error
+NAME := minishell
+HEADER := -Ilibft/include -Iinclude 
+CC := cc
+CFLAGS = -Wall -Wextra -Werror -g
+RM := rm -rf
+LIB := libft/libft.a
 
-SRC_DIR = src/
-OBJ_DIR = obj/
+FILES := main executing/init executing/init_exec executing/exec\
+executing/utils executing/error built_ins/echo built_ins/exec_builtins\
+built_ins/cd built_ins/env built_ins/exit built_ins/export built_ins/pwd\
+built_ins/unset init_exec/env_init init_exec/env_management utils/strsjoin\
+init_exec/which_exec
 
-SRCS	= $(addprefix $(SRC_DIR), $(addsuffix .c, $(FILES)))
-OBJS	= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(FILES)))
+
+SRC_DIR := src/
+OBJ_DIR := obj/
+
+OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(FILES)))
 
 all: $(NAME)
 
-$(NAME): $(OBJ_DIR) $(OBJS) $(LIB)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB)
-
-$(LIB):
-	make -C lib/Libft
+$(NAME): $(OBJS) $(LIB)
+	$(CC) $(CFLAGS) $^ -o $@
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(HEADER) -o $@ -c $<
 
-$(OBJ_DIR):
-	@mkdir -p $@
+$(LIB):
+	make -C libft
 
 clean:
-	rm -rf $(OBJ_DIR)
+	$(RM) $(OBJS)
 
 fclean: clean
-	@rm -rf $(NAME)
-	make fclean -C lib/Libft
+	$(RM) $(NAME)
+	make fclean -C libft
 
 re: fclean all
 
